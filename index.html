@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brilhe Festa</title>
 
+<!-- ÍCONES -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 
 body {
@@ -41,11 +44,16 @@ section {
   text-align: center;
 }
 
+/* LOGO */
+.logo {
+  max-width: 320px;
+  filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+}
+
 /* HERO */
 .hero {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -55,21 +63,19 @@ section {
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
   width: 100%;
   max-width: 300px;
+  transition: 0.4s;
 }
 
-/* IMAGEM PRINCIPAL */
+.hero img:hover {
+  transform: scale(1.05);
+}
+
 .big {
   max-width: 420px;
 }
 
-/* ROTAÇÃO */
-.rotate-left {
-  transform: rotate(-6deg);
-}
-
-.rotate-right {
-  transform: rotate(6deg);
-}
+.rotate-left { transform: rotate(-5deg); }
+.rotate-right { transform: rotate(5deg); }
 
 /* BOTÃO */
 .btn {
@@ -80,23 +86,33 @@ section {
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.08);
 }
 
 /* KITS */
 .kits {
   display: flex;
-  justify-content: center;
   gap: 25px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
-  background: white;
+  background: rgba(255,255,255,0.95);
   color: black;
   border-radius: 15px;
   padding: 15px;
   width: 260px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
 }
 
 .card img {
@@ -104,53 +120,78 @@ section {
   border-radius: 12px;
 }
 
-/* WHATS */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  text-decoration: none;
+/* GALERIA */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-top: 30px;
 }
 
-/* 📱 RESPONSIVO MOBILE */
-@media (max-width: 768px) {
+.galeria img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
+}
 
-  nav {
-    gap: 20px;
-    font-size: 14px;
-  }
+.galeria img:hover {
+  transform: scale(1.05);
+}
 
-  .hero {
-    flex-direction: column;
-  }
+/* CONTATO FINAL */
+.contato {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  font-size: 18px;
+}
 
-  .hero img {
-    max-width: 90%;
-  }
+.contato-box {
+  background: rgba(255,255,255,0.1);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
 
-  .big {
-    max-width: 95%;
-  }
+/* BOTÕES FLUTUANTES */
+.whatsapp-float,
+.instagram-float {
+  position: fixed;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  z-index: 9999;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
 
-  /* REMOVE ROTAÇÃO NO CELULAR */
-  .rotate-left,
-  .rotate-right {
-    transform: rotate(0deg);
-  }
+.whatsapp-float {
+  bottom: 20px;
+  background: #25D366;
+}
 
-  .kits {
-    flex-direction: column;
-    align-items: center;
-  }
+.instagram-float {
+  bottom: 90px;
+  background: linear-gradient(45deg, #E1306C, #F77737);
+}
 
-  .card {
-    width: 90%;
-  }
+.whatsapp-float:hover,
+.instagram-float:hover {
+  transform: scale(1.1);
+}
 
+/* MOBILE */
+@media (max-width:768px){
+.hero { flex-direction: column; }
+.rotate-left, .rotate-right { transform: rotate(0); }
+.kits { flex-direction: column; }
+.card { width: 90%; }
 }
 
 </style>
@@ -160,15 +201,14 @@ section {
 
 <nav>
   <a href="#home">Início</a>
-  <a href="#missao">Missão</a>
   <a href="#kits">Kits</a>
+  <a href="#galeria">Galeria</a>
 </nav>
 
 <!-- HOME -->
 <section id="home">
 
-<img src="
-brilhe festa logo sem fundo.png" style="max-width:300px; margin-bottom:20px;">
+<img src="logo.JPEG" class="logo">
 
 <h1>Decorações que fazem memórias</h1>
 
@@ -178,26 +218,9 @@ brilhe festa logo sem fundo.png" style="max-width:300px; margin-bottom:20px;">
   <img src="cereja.jpg" class="rotate-right">
 </div>
 
-<a href="https://wa.me/5554984053314" class="btn" target="_blank">
+<a href="https://wa.me/5554984053314?text=Olá! Vim pelo site e quero orçamento." target="_blank" class="btn">
 Reservar Agora
 </a>
-
-</section>
-
-<!-- MISSÃO -->
-<section id="missao">
-
-<h2>Transformando Ideias em Memórias</h2>
-
-<p style="max-width:650px; margin:auto;">
-Na Brilhe e Festa, acreditamos que cada celebração merece um toque especial.
-Oferecemos um serviço de curadoria premium para festas de aniversário,
-chás de bebê e eventos únicos.
-</p>
-
-<br>
-
-<img src="bob esponja.jpeg" style="max-width:500px; border-radius:20px;">
 
 </section>
 
@@ -211,32 +234,70 @@ chás de bebê e eventos únicos.
 <div class="card">
 <img src="homem aranha grande.jpeg">
 <h3>Aniversário</h3>
-<a href="https://wa.me/5554984053314" class="btn" target="_blank">Reservar</a>
+<a href="https://wa.me/5554984053314?text=Olá! Quero reservar o kit de Aniversário." target="_blank" class="btn">Reservar</a>
 </div>
 
 <div class="card">
 <img src="cha revelação boy girl.jpg">
 <h3>Chá de Bebê</h3>
-<a href="https://wa.me/5554984053314" class="btn" target="_blank">Reservar</a>
+<a href="https://wa.me/5554984053314?text=Olá! Quero reservar o kit de Chá de Bebê." target="_blank" class="btn">Reservar</a>
 </div>
 
 <div class="card">
 <img src="tropical.jpeg">
 <h3>Tropical</h3>
-<a href="https://wa.me/5554984053314" class="btn" target="_blank">Reservar</a>
+<a href="https://wa.me/5554984053314?text=Olá! Quero reservar o kit Tropical." target="_blank" class="btn">Reservar</a>
 </div>
 
 </div>
-
-<p style="margin-top:40px;">
-<a href="https://www.instagram.com/brilhe_festa/" target="_blank">
-📸 @brilhe_festa
-</a>
-</p>
 
 </section>
 
-<a href="https://wa.me/5554984053314" class="whatsapp" target="_blank">W</a>
+<!-- GALERIA -->
+<section id="galeria">
+
+<h2>Galeria de Decorações</h2>
+
+<div class="galeria">
+  <img src="bela e a fera.jpg">
+  <img src="homem aranha grande.jpeg">
+  <img src="cha revelação boy girl.jpg">
+  <img src="tropical.jpeg">
+  <img src="cereja.jpg">
+  <img src="bob esponja.jpeg">
+</div>
+
+</section>
+
+<!-- CONTATO -->
+<section>
+
+<div class="contato">
+
+  <div class="contato-box">
+    📞 <strong>Fone:</strong> (54) 98405-3314
+  </div>
+
+  <a href="https://www.instagram.com/brilhe_festa/" target="_blank"
+     style="display:flex; align-items:center; gap:10px; color:#f472b6; font-size:20px; text-decoration:none;">
+    
+    <i class="fa-brands fa-instagram"></i>
+    @brilhe_festa
+
+  </a>
+
+</div>
+
+</section>
+
+<!-- BOTÕES FLUTUANTES -->
+<a href="https://wa.me/5554984053314?text=Olá! Quero informações." target="_blank" class="whatsapp-float">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="https://www.instagram.com/brilhe_festa/" target="_blank" class="instagram-float">
+  <i class="fa-brands fa-instagram"></i>
+</a>
 
 </body>
 </html>
