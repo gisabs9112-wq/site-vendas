@@ -12,54 +12,40 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: radial-gradient(circle at top, #1e1b4b, #020617);
   color: white;
+  scroll-behavior: smooth;
 }
 
 /* NAV */
 nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 20px;
+  padding: 15px;
+  background: rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.4);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
 nav a {
-  cursor: pointer;
+  color: white;
+  text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #f472b6;
 }
 
 /* SECTION */
-.section {
-  display: none;
-  padding: 80px 20px;
+section {
+  padding: 100px 20px;
   text-align: center;
-  animation: fade 0.6s ease;
-}
-
-.active {
-  display: block;
-}
-
-@keyframes fade {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
 }
 
 /* HERO */
 .hero {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 25px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -89,12 +75,7 @@ nav a:hover {
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  margin-top: 15px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
+  margin-top: 20px;
 }
 
 /* KITS */
@@ -106,16 +87,11 @@ nav a:hover {
 }
 
 .card {
-  background: rgba(255,255,255,0.95);
+  background: white;
   color: black;
   border-radius: 15px;
   padding: 15px;
   width: 260px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
 }
 
 .card img {
@@ -123,19 +99,8 @@ nav a:hover {
   border-radius: 12px;
 }
 
-/* INSTAGRAM */
-.instagram {
-  margin-top: 40px;
-}
-
-.instagram a {
-  font-size: 32px;
-  color: #f472b6;
-  text-decoration: none;
-}
-
-/* WHATS FLOAT */
-.whatsapp-float {
+/* WHATS */
+.whatsapp {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -143,104 +108,92 @@ nav a:hover {
   padding: 15px;
   border-radius: 50%;
   color: white;
-  font-size: 20px;
   text-decoration: none;
 }
 
 </style>
-
-<script>
-function showSection(id) {
-  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
-  document.getElementById(id).classList.add("active");
-}
-</script>
-
 </head>
 
 <body>
 
 <nav>
-  <a onclick="showSection('home')">Início</a>
-  <a onclick="showSection('missao')">Missão</a>
-  <a onclick="showSection('kits')">Kits</a>
+  <a href="#home">Início</a>
+  <a href="#missao">Missão</a>
+  <a href="#kits">Kits</a>
 </nav>
 
 <!-- HOME -->
-<section id="home" class="section active">
-  
-  <img src="logo.png" style="max-width:300px; margin-bottom:20px;">
+<section id="home">
 
-  <h1>Decorações que fazem memórias</h1>
+<img src="logo.jpg" style="max-width:300px; margin-bottom:20px;">
 
-  <div class="hero">
-    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d" class="big">
-    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176" class="rotate-left">
-    <img src="https://images.unsplash.com/photo-1529634894325-59f8c65d1b3b" class="rotate-right">
-  </div>
+<h1>Decorações que fazem memórias</h1>
 
-  <a href="https://wa.me/5554984053314" target="_blank" class="btn">
-    Fazer Reserva Agora
-  </a>
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d" class="big">
+  <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176" class="rotate-left">
+  <img src="https://images.unsplash.com/photo-1529634894325-59f8c65d1b3b" class="rotate-right">
+</div>
+
+<a href="https://wa.me/5554984053314" class="btn" target="_blank">
+Reservar Agora
+</a>
 
 </section>
 
 <!-- MISSÃO -->
-<section id="missao" class="section">
+<section id="missao">
 
-  <h2>Transformando Ideias em Memórias</h2>
+<h2>Transformando Ideias em Memórias</h2>
 
-  <p style="max-width:650px; margin:auto;">
-    Na Brilhe e Festa, acreditamos que cada celebração merece um toque especial.
-    Oferecemos um serviço de curadoria premium para festas de aniversário,
-    chás de bebê e eventos únicos, ajudando você a materializar suas visões
-    com elegância e sofisticação.
-  </p>
+<p style="max-width:650px; margin:auto;">
+Na Brilhe e Festa, acreditamos que cada celebração merece um toque especial.
+Oferecemos um serviço de curadoria premium para festas de aniversário,
+chás de bebê e eventos únicos.
+</p>
 
-  <br>
+<br>
 
-  <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84" style="max-width:500px; border-radius:20px;">
+<img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84" style="max-width:500px; border-radius:20px;">
 
 </section>
 
 <!-- KITS -->
-<section id="kits" class="section">
+<section id="kits">
 
-  <h2>Opção de Kits</h2>
+<h2>Opção de Kits</h2>
 
-  <div class="kits">
+<div class="kits">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48">
-      <h3>Aniversário</h3>
-      <a href="https://wa.me/5554984053314" target="_blank" class="btn">Reservar</a>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48">
+<h3>Aniversário</h3>
+<a href="https://wa.me/5554984053314" class="btn">Reservar</a>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a">
-      <h3>Chá de Bebê</h3>
-      <a href="https://wa.me/5554984053314" target="_blank" class="btn">Reservar</a>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a">
+<h3>Chá de Bebê</h3>
+<a href="https://wa.me/5554984053314" class="btn">Reservar</a>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae">
-      <h3>Chá Revelação</h3>
-      <a href="https://wa.me/5554984053314" target="_blank" class="btn">Reservar</a>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae">
+<h3>Chá Revelação</h3>
+<a href="https://wa.me/5554984053314" class="btn">Reservar</a>
+</div>
 
-  </div>
+</div>
 
-  <div class="instagram">
-    <p>📸 Siga no Instagram</p>
-    <a href="https://www.instagram.com/brilhe_festa/" target="_blank">
-      @brilhe_festa
-    </a>
-  </div>
+<p style="margin-top:40px;">
+<a href="https://www.instagram.com/brilhe_festa/" target="_blank">
+📸 @brilhe_festa
+</a>
+</p>
 
 </section>
 
-<!-- BOTÃO FLUTUANTE -->
-<a href="https://wa.me/5554984053314" class="whatsapp-float" target="_blank">W</a>
+<a href="https://wa.me/5554984053314" class="whatsapp" target="_blank">W</a>
 
 </body>
 </html>
