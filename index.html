@@ -1,215 +1,246 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja Online</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brilhe Festa</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
 
-    body {
-      background: #f8f8f8;
-      color: #333;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1e1b4b, #020617);
+  color: white;
+}
 
-    header {
-      background: #111;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    header h1 {
-      font-size: 28px;
-    }
+nav a {
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-    .banner {
-      background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd53') no-repeat center/cover;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-    }
+nav a:hover {
+  color: #f472b6;
+}
 
-    .banner h2 {
-      font-size: 40px;
-      background: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-    }
+/* SECTION */
+.section {
+  display: none;
+  padding: 80px 20px;
+  text-align: center;
+  animation: fade 0.6s ease;
+}
 
-    .produtos {
-      padding: 40px;
-      text-align: center;
-    }
+.active {
+  display: block;
+}
 
-    .produtos h2 {
-      margin-bottom: 20px;
-    }
+@keyframes fade {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
 
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
+.hero img {
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
+.big {
+  max-width: 420px;
+}
 
-    .card h3 {
-      margin: 10px 0;
-    }
+.rotate-left {
+  transform: rotate(-6deg);
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #ff6600;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
+.rotate-right {
+  transform: rotate(6deg);
+}
 
-    .btn:hover {
-      background: #e65c00;
-    }
+/* BOTÃO */
+.btn {
+  background: linear-gradient(45deg, #f472b6, #facc15);
+  padding: 14px 25px;
+  border-radius: 12px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: 0.3s;
+}
 
-    .contato {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 40px;
-    }
+.btn:hover {
+  transform: scale(1.05);
+}
 
-    .contato a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      color: white;
-    }
+/* KITS */
+.kits {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
 
-    .whatsapp {
-      background: #25D366;
-    }
+.card {
+  background: rgba(255,255,255,0.95);
+  color: black;
+  border-radius: 15px;
+  padding: 15px;
+  width: 260px;
+  transition: 0.3s;
+}
 
-    .instagram {
-      background: #E1306C;
-    }
+.card:hover {
+  transform: translateY(-10px);
+}
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #111;
-      color: white;
-    }
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
 
-    .floating {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+/* INSTAGRAM */
+.instagram {
+  margin-top: 40px;
+}
 
-    .floating a {
-      padding: 15px;
-      border-radius: 50%;
-      color: white;
-      text-align: center;
-      font-size: 18px;
-    }
+.instagram a {
+  font-size: 32px;
+  color: #f472b6;
+  text-decoration: none;
+}
 
-    .floating .whatsapp {
-      background: #25D366;
-    }
+/* WHATS FLOAT */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
 
-    .floating .instagram {
-      background: #E1306C;
-    }
-  </style>
+</style>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+</script>
+
 </head>
 
 <body>
 
-<header>
-  <h1>Sua Loja Online</h1>
-</header>
+<nav>
+  <a onclick="showSection('home')">Início</a>
+  <a onclick="showSection('missao')">Missão</a>
+  <a onclick="showSection('kits')">Kits</a>
+</nav>
 
-<section class="banner">
-  <h2>Produtos Incríveis Para Você</h2>
+<!-- HOME -->
+<section id="home" class="section active">
+  
+  <img src="logo.png" style="max-width:300px; margin-bottom:20px;">
+
+  <h1>Decorações que fazem memórias</h1>
+
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d" class="big">
+    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176" class="rotate-left">
+    <img src="https://images.unsplash.com/photo-1529634894325-59f8c65d1b3b" class="rotate-right">
+  </div>
+
+  <a href="https://wa.me/5554984053314" target="_blank" class="btn">
+    Fazer Reserva Agora
+  </a>
+
 </section>
 
-<section class="produtos">
-  <h2>Nossos Produtos</h2>
+<!-- MISSÃO -->
+<section id="missao" class="section">
 
-  <div class="grid">
+  <h2>Transformando Ideias em Memórias</h2>
+
+  <p style="max-width:650px; margin:auto;">
+    Na Brilhe e Festa, acreditamos que cada celebração merece um toque especial.
+    Oferecemos um serviço de curadoria premium para festas de aniversário,
+    chás de bebê e eventos únicos, ajudando você a materializar suas visões
+    com elegância e sofisticação.
+  </p>
+
+  <br>
+
+  <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84" style="max-width:500px; border-radius:20px;">
+
+</section>
+
+<!-- KITS -->
+<section id="kits" class="section">
+
+  <h2>Opção de Kits</h2>
+
+  <div class="kits">
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-      <h3>Produto 1</h3>
-      <p>Descrição do produto</p>
-      <a href="#" class="btn">Comprar</a>
+      <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48">
+      <h3>Aniversário</h3>
+      <a href="https://wa.me/5554984053314" target="_blank" class="btn">Reservar</a>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f">
-      <h3>Produto 2</h3>
-      <p>Descrição do produto</p>
-      <a href="#" class="btn">Comprar</a>
+      <img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a">
+      <h3>Chá de Bebê</h3>
+      <a href="https://wa.me/5554984053314" target="_blank" class="btn">Reservar</a>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
-      <h3>Produto 3</h3>
-      <p>Descrição do produto</p>
-      <a href="#" class="btn">Comprar</a>
+      <img src="https://images.unsplash.com/photo-1607082350899-7e105aa886ae">
+      <h3>Chá Revelação</h3>
+      <a href="https://wa.me/5554984053314" target="_blank" class="btn">Reservar</a>
     </div>
 
   </div>
-</section>
 
-<section class="contato">
-  <h2>Fale Conosco</h2>
-
-  <a href="https://wa.me/5554991674077" target="_blank" class="whatsapp">
-    WhatsApp
-  </a>
-
-  <a href="https://instagram.com/arcondicionado_solumartin" target="_blank" class="instagram">
-    Instagram
-  </a>
+  <div class="instagram">
+    <p>📸 Siga no Instagram</p>
+    <a href="https://www.instagram.com/brilhe_festa/" target="_blank">
+      @brilhe_festa
+    </a>
+  </div>
 
 </section>
 
-<footer>
-  <p>© 2026 - Sua Empresa</p>
-</footer>
-
-<div class="floating">
-  <a href="https://wa.me/5554991674077" target="_blank" class="whatsapp">W</a>
-  <a href="https://instagram.com/arcondicionado_solumartin" target="_blank" class="instagram">I</a>
-</div>
+<!-- BOTÃO FLUTUANTE -->
+<a href="https://wa.me/5554984053314" class="whatsapp-float" target="_blank">W</a>
 
 </body>
 </html>
