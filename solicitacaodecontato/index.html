@@ -27,28 +27,49 @@ body {
 }
 
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-/* BOTÕES COM IMAGEM */
-.btn-img {
+/* BOTÕES */
+.btn {
   display: block;
+  width: 260px;
   margin: 15px auto;
-  width: 220px;
+  padding: 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
   transition: 0.3s;
 }
 
-.btn-img:hover {
+/* WHATSAPP */
+.whatsapp {
+  background: #25D366;
+}
+
+.whatsapp:hover {
+  background: #1ebe5d;
   transform: scale(1.05);
 }
 
-/* BOTÃO VOLTAR */
+/* INSTAGRAM */
+.instagram {
+  background: linear-gradient(45deg, #E1306C, #F77737);
+}
+
+.instagram:hover {
+  transform: scale(1.05);
+}
+
+/* VOLTAR */
 .voltar {
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 12px 25px;
   border: none;
   border-radius: 10px;
   background: linear-gradient(45deg, #f472b6, #facc15);
+  color: black;
   font-weight: bold;
   cursor: pointer;
 }
@@ -66,13 +87,13 @@ h2 {
   <h2>Escolha como deseja entrar em contato</h2>
 
   <!-- WHATSAPP -->
-  <a href="https://wa.me/5554984053314?text=Olá! Quero fazer uma reserva." target="_blank">
-    <img src="../whatsapp.png" class="btn-img" alt="WhatsApp">
+  <a href="https://wa.me/5554984053314?text=Olá! Quero fazer uma reserva." target="_blank" class="btn whatsapp">
+    📱 Falar no WhatsApp
   </a>
 
   <!-- INSTAGRAM -->
-  <a href="https://www.instagram.com/brilhe_festa/" target="_blank">
-    <img src="../instagram.png" class="btn-img" alt="Instagram">
+  <a href="https://www.instagram.com/brilhe_festa/" target="_blank" class="btn instagram">
+    📸 Ver Instagram
   </a>
 
   <!-- VOLTAR -->
