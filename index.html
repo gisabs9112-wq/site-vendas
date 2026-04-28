@@ -20,7 +20,7 @@
 
 <style>
 
-/* (SEU CSS ORIGINAL — NÃO ALTERADO) */
+/* SEU CSS ORIGINAL (INALTERADO) */
 
 body {
   margin: 0;
@@ -30,7 +30,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* NAV */
 nav {
   position: fixed;
   width: 100%;
@@ -50,13 +49,11 @@ nav a {
   font-weight: bold;
 }
 
-/* SECTION */
 section {
   padding: 100px 20px;
   text-align: center;
 }
 
-/* HERO */
 .hero {
   display: flex;
   justify-content: center;
@@ -84,7 +81,6 @@ section {
   transform: rotate(6deg);
 }
 
-/* BOTÃO */
 .btn {
   background: linear-gradient(45deg, #f472b6, #facc15);
   padding: 14px 25px;
@@ -96,7 +92,6 @@ section {
   margin-top: 20px;
 }
 
-/* KITS */
 .kits {
   display: flex;
   justify-content: center;
@@ -117,7 +112,6 @@ section {
   border-radius: 12px;
 }
 
-/* BOTÕES FLUTUANTES */
 .whatsapp-float,
 .instagram-float {
   position: fixed;
@@ -144,7 +138,6 @@ section {
   background: linear-gradient(45deg, #E1306C, #F77737);
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
 
   nav {
@@ -191,7 +184,6 @@ section {
   <a href="#kits">Kits</a>
 </nav>
 
-<!-- HOME -->
 <section id="home">
 
 <img src="brilhe festa logo sem fundo.png" style="max-width:300px; margin-bottom:20px;">
@@ -210,7 +202,6 @@ Reservar Agora
 
 </section>
 
-<!-- MISSÃO -->
 <section id="missao">
 
 <h2>Transformando Ideias em Memórias</h2>
@@ -227,7 +218,6 @@ chás de bebê e eventos únicos.
 
 </section>
 
-<!-- KITS -->
 <section id="kits">
 
 <h2>Opção de Kits</h2>
@@ -269,10 +259,9 @@ chás de bebê e eventos únicos.
 
 </section>
 
-<!-- BOTÕES FLUTUANTES -->
-<a href="https://wa.me/5554984053314?text=Olá! Quero informações." 
+<!-- BOTÃO WHATSAPP (AJUSTADO) -->
+<a href="#" 
 onclick="return gtag_report_conversion('https://wa.me/5554984053314?text=Olá! Quero informações.')" 
-target="_blank" 
 class="whatsapp-float">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
@@ -286,7 +275,7 @@ class="whatsapp-float">
 function gtag_report_conversion(url) {
   var callback = function () {
     if (typeof(url) != 'undefined') {
-      window.location = url;
+      window.open(url, '_blank'); // abre após registrar conversão
     }
   };
   gtag('event', 'conversion', {
