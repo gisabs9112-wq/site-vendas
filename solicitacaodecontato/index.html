@@ -44,7 +44,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   width: 260px;
   margin: 15px auto;
   padding: 15px;
@@ -53,6 +53,13 @@ h2 {
   font-weight: bold;
   color: white;
   transition: 0.3s;
+  font-size: 16px;
+}
+
+/* ÍCONES */
+.icon {
+  width: 22px;
+  height: 22px;
 }
 
 /* WHATSAPP */
@@ -93,23 +100,29 @@ h2 {
 
 <div class="container">
 
-  <!-- LOGO -->
   <img src="../brilhe festa logo sem fundo.png" class="logo">
 
   <h2>Escolha como deseja entrar em contato</h2>
 
-  <!-- WHATSAPP COM CONVERSÃO -->
+  <!-- WHATSAPP -->
   <a href="https://wa.me/5554984053314?text=Olá! Quero fazer uma reserva." 
      target="_blank"
      onclick="gtag_report_conversion();"
      class="btn whatsapp">
-    
-    📱 Falar no WhatsApp
+
+    <!-- ÍCONE OFICIAL WHATSAPP -->
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" class="icon" style="filter: invert(1);">
+
+    Falar no WhatsApp
   </a>
 
   <!-- INSTAGRAM -->
   <a href="https://www.instagram.com/brilhe_festa/" target="_blank" class="btn instagram">
-    📸 Ver Instagram
+
+    <!-- ÍCONE OFICIAL INSTAGRAM -->
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" class="icon" style="filter: invert(1);">
+
+    Ver Instagram
   </a>
 
   <!-- VOLTAR -->
