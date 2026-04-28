@@ -1,101 +1,125 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brilhe Festa</title>
+<title>Contato - Brilhe Festa</title>
 
-<!-- Google tag -->
+<!-- GOOGLE TAG -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18050510277"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-18050510277');
 </script>
 
-<!-- ÍCONES -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 <style>
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: radial-gradient(circle at top, #1e1b4b, #020617);
   color: white;
   text-align: center;
+  padding: 20px;
 }
 
-section {
-  padding: 80px 20px;
+.container {
+  max-width: 400px;
+  margin: auto;
 }
 
+.logo {
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 25px;
+}
+
+/* BOTÕES */
 .btn {
-  background: linear-gradient(45deg, #f472b6, #facc15);
-  padding: 14px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 260px;
+  margin: 15px auto;
+  padding: 15px;
   border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  background: #25D366;
+}
+
+.whatsapp:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
+}
+
+/* INSTAGRAM */
+.instagram {
+  background: linear-gradient(45deg, #E1306C, #F77737);
+}
+
+.instagram:hover {
+  transform: scale(1.05);
+}
+
+/* VOLTAR */
+.voltar {
+  margin-top: 30px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #f472b6, #facc15);
   color: black;
   font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
+  cursor: pointer;
 }
 
-.whatsapp-btn {
-  display: inline-block;
-  background: #25D366;
-  color: white;
-  padding: 15px 25px;
-  border-radius: 12px;
-  font-size: 18px;
-  text-decoration: none;
-  margin-top: 20px;
-}
-
-.instagram-btn {
-  display: inline-block;
-  background: linear-gradient(45deg, #E1306C, #F77737);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 12px;
-  font-size: 18px;
-  text-decoration: none;
-  margin-top: 10px;
-}
 </style>
 </head>
 
 <body>
 
-<section>
+<div class="container">
 
-<img src="brilhe festa logo sem fundo.png" style="max-width:300px; margin-bottom:20px;">
+  <!-- LOGO -->
+  <img src="../brilhe festa logo sem fundo.png" class="logo">
 
-<h2>Escolha como deseja entrar em contato</h2>
+  <h2>Escolha como deseja entrar em contato</h2>
 
-<!-- BOTÃO WHATSAPP CORRIGIDO -->
-<a href="https://wa.me/5554984053314?text=Olá! Quero informações." 
-target="_blank"
-onclick="gtag_report_conversion();"
-class="whatsapp-btn">
-📱 Falar no WhatsApp
-</a>
+  <!-- WHATSAPP COM CONVERSÃO -->
+  <a href="https://wa.me/5554984053314?text=Olá! Quero fazer uma reserva." 
+     target="_blank"
+     onclick="gtag_report_conversion();"
+     class="btn whatsapp">
+    
+    📱 Falar no WhatsApp
+  </a>
 
-<br>
+  <!-- INSTAGRAM -->
+  <a href="https://www.instagram.com/brilhe_festa/" target="_blank" class="btn instagram">
+    📸 Ver Instagram
+  </a>
 
-<!-- INSTAGRAM -->
-<a href="https://www.instagram.com/brilhe_festa/" target="_blank" class="instagram-btn">
-📸 Ver Instagram
-</a>
+  <!-- VOLTAR -->
+  <button class="voltar" onclick="window.location.href='../index.html'">
+    Voltar ao site
+  </button>
 
-<br>
+</div>
 
-<a href="/" class="btn">Voltar ao site</a>
-
-</section>
-
-<!-- SCRIPT DE CONVERSÃO (CORRIGIDO) -->
+<!-- SCRIPT DE CONVERSÃO -->
 <script>
 function gtag_report_conversion() {
   gtag('event', 'conversion', {
