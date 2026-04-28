@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Brilhe Festa</title>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18050510277"></script>
 <script>
@@ -13,10 +14,13 @@
 
   gtag('config', 'AW-18050510277');
 </script>
+
 <!-- ÍCONES -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+
+/* (SEU CSS ORIGINAL — NÃO ALTERADO) */
 
 body {
   margin: 0;
@@ -266,13 +270,32 @@ chás de bebê e eventos únicos.
 </section>
 
 <!-- BOTÕES FLUTUANTES -->
-<a href="https://wa.me/5554984053314?text=Olá! Quero informações." target="_blank" class="whatsapp-float">
+<a href="https://wa.me/5554984053314?text=Olá! Quero informações." 
+onclick="return gtag_report_conversion('https://wa.me/5554984053314?text=Olá! Quero informações.')" 
+target="_blank" 
+class="whatsapp-float">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <a href="https://www.instagram.com/brilhe_festa/" target="_blank" class="instagram-float">
   <i class="fa-brands fa-instagram"></i>
 </a>
+
+<!-- SCRIPT DE CONVERSÃO -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18050510277/AZpJCMrNpKQcEMXbk59D',
+    'event_callback': callback
+  });
+  return false;
+}
+</script>
 
 </body>
 </html>
