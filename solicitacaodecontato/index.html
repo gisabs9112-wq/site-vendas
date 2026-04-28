@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato - Brilhe Festa</title>
 
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1e1b4b, #020617);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.logo {
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* BOTÕES COM IMAGEM */
+.btn-img {
+  display: block;
+  margin: 15px auto;
+  width: 220px;
+  transition: 0.3s;
+}
+
+.btn-img:hover {
+  transform: scale(1.05);
+}
+
+/* BOTÃO VOLTAR */
+.voltar {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #f472b6, #facc15);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LOGO -->
+  <img src="../brilhe festa logo sem fundo.png" class="logo">
+
+  <h2>Escolha como deseja entrar em contato</h2>
+
+  <!-- WHATSAPP -->
+  <a href="https://wa.me/5554984053314?text=Olá! Quero fazer uma reserva." target="_blank">
+    <img src="../whatsapp.png" class="btn-img" alt="WhatsApp">
+  </a>
+
+  <!-- INSTAGRAM -->
+  <a href="https://www.instagram.com/brilhe_festa/" target="_blank">
+    <img src="../instagram.png" class="btn-img" alt="Instagram">
+  </a>
+
+  <!-- VOLTAR -->
+  <button class="voltar" onclick="window.location.href='../index.html'">
+    Voltar ao site
+  </button>
+
+</div>
+
+</body>
+</html>
